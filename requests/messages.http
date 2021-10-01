@@ -1,0 +1,20 @@
+GET http://127.0.0.1:5000/messages
+
+###
+
+POST http://127.0.0.1:5000/messages
+Content-Type: application/json
+
+{
+  "textOfMessage": "vch vc rt ertgfdgvarg sdf",
+  "emailOfAutor": "test4@test.test"
+}
+
+###
+GET http://127.0.0.1:5000/messages/8c9a1361-a99e-48c3-9784-83c8f8676c03
+
+###
+DELETE http://127.0.0.1:5000/messages/
+
+###
+PATCH http://127.0.0.1:5000/messages/afd29641-91de-49ae-bf83-821d3f1dde87
