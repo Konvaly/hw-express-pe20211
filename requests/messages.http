@@ -14,7 +14,7 @@ Content-Type: application/json
 GET http://127.0.0.1:5000/messages/8c9a1361-a99e-48c3-9784-83c8f8676c03
 
 ###
-DELETE http://127.0.0.1:5000/messages/
+DELETE http://127.0.0.1:5000/messages/3aee7edf-ac22-4104-8be9-84fe18ec8dbe
 
 ###
 PATCH http://127.0.0.1:5000/messages/afd29641-91de-49ae-bf83-821d3f1dde87
