@@ -2,17 +2,17 @@ const { v4: uuidv4 } = require('uuid');
 const messagesForumDB = [
   {
     id: uuidv4(),
-    textOfMessage: 'aggjfsdjgvj sgfds sdfgds',
+    textOfMessage: 'Hi, there',
     emailOfAutor: 'test1@test.test',
   },
   {
     id: uuidv4(),
-    textOfMessage: 'mkm berrhe nbhtt gtr gvctrrt',
+    textOfMessage: 'Only now uou can change...',
     emailOfAutor: 'test2@test.test',
   },
   {
     id: uuidv4(),
-    textOfMessage: 'nkjhi bkh trdr vg vyjv vyyuyt',
+    textOfMessage: 'It is a good opportunity',
     emailOfAutor: 'test3@test.test',
   },
 ];
@@ -65,4 +65,18 @@ module.exports.updateMessage = (req, res) => {
     message => messageId === message.id
   );
   console.log(messagesForumDB[indexOfMessage]);
+
+  if (indexOfMessage !== -1) {
+    const updatedMessage = { ...messagesForumDB[indexOfMessage], ...body };
+    console.log(`updatedMessage`, updatedMessage);
+    // updateMessage.splice(
+    // messagesForumDB[indexOfMessage],
+    // 1,
+    // updatedMessage
+    // );
+
+    res.status(200).send(updatedMessage);
+  } else {
+    res.status(404).send('Message not found');
+  }
 };

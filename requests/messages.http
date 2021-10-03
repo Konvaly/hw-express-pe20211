@@ -6,15 +6,23 @@ POST http://127.0.0.1:5000/messages
 Content-Type: application/json
 
 {
-  "textOfMessage": "vch vc rt ertgfdgvarg sdf",
+  "textOfMessage": "Good luck",
   "emailOfAutor": "test4@test.test"
 }
 
 ###
-GET http://127.0.0.1:5000/messages/8c9a1361-a99e-48c3-9784-83c8f8676c03
+GET http://127.0.0.1:5000/messages/1ae41fa2-02f5-47be-b091-3db24aea2bca
 
 ###
-DELETE http://127.0.0.1:5000/messages/3aee7edf-ac22-4104-8be9-84fe18ec8dbe
+DELETE http://127.0.0.1:5000/messages/5535dfb7-f1f0-48bc-80f8-9109a870451d
 
 ###
-PATCH http://127.0.0.1:5000/messages/afd29641-91de-49ae-bf83-821d3f1dde87
+PATCH http://127.0.0.1:5000/messages/842cd259-e9bf-4a4b-aacd-3b329258afc7
+Content-Type: application/json
+
+{
+  "textOfMessage": "Bye-bye"
+}
+
+
+
