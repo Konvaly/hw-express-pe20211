@@ -67,15 +67,11 @@ module.exports.updateMessage = (req, res) => {
   console.log(messagesForumDB[indexOfMessage]);
 
   if (indexOfMessage !== -1) {
-    const updatedMessage = { ...messagesForumDB[indexOfMessage], ...body };
-    console.log(`updatedMessage`, updatedMessage);
-    // updateMessage.splice(
-    // messagesForumDB[indexOfMessage],
-    // 1,
-    // updatedMessage
-    // );
-
-    res.status(200).send(updatedMessage);
+    messagesForumDB[indexOfMessage] = {
+      ...messagesForumDB[indexOfMessage],
+      ...body,
+    };
+    res.status(200).send(messagesForumDB[indexOfMessage]);
   } else {
     res.status(404).send('Message not found');
   }

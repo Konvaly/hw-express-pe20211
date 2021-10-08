@@ -2,6 +2,7 @@ const express = require('express');
 
 const messageController = require('./controllers/message.controller');
 const validate = require('./middleware/validate.mw');
+const validateUpd = require('./middleware/validateUpdated.mw');
 const app = express();
 
 app.use(express.json());
@@ -23,7 +24,11 @@ app.get('/messages/:messageId', messageController.getMessageById);
 app.delete('/messages/:messageId', messageController.deleteMessage);
 
 //Обновление сообщения по id
-app.patch('/messages/:messageId', messageController.updateMessage);
+app.patch(
+  '/messages/:messageId',
+  validateUpd.validateUpdatedMessage,
+  messageController.updateMessage
+);
 
 app.use((err, req, res, next) => {
   res.status(500).send(err);

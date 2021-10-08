@@ -2,7 +2,7 @@ module.exports.validateMessage = async (req, res, next) => {
   const yup = require('yup');
   const { body } = req;
 
-  const USER_VALIDATION_SCHEMA = yup.object().shape({
+  const MESSAGE_VALIDATION_SCHEMA = yup.object().shape({
     textOfMessage: yup
       .string()
       .min(1)
@@ -15,7 +15,7 @@ module.exports.validateMessage = async (req, res, next) => {
   });
 
   try {
-    const validatedMessage = await USER_VALIDATION_SCHEMA.validate(body);
+    const validatedMessage = await MESSAGE_VALIDATION_SCHEMA.validate(body);
     req.body = validatedMessage;
     next();
   } catch (e) {
