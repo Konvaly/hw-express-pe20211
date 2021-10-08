@@ -2,7 +2,6 @@ const express = require('express');
 
 const messageController = require('./controllers/message.controller');
 const validate = require('./middleware/validate.mw');
-const validateUpd = require('./middleware/validateUpdated.mw');
 const app = express();
 
 app.use(express.json());
@@ -26,7 +25,7 @@ app.delete('/messages/:messageId', messageController.deleteMessage);
 //Обновление сообщения по id
 app.patch(
   '/messages/:messageId',
-  validateUpd.validateUpdatedMessage,
+  validate.validateUpdatedMessage,
   messageController.updateMessage
 );
 
